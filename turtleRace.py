@@ -1,6 +1,10 @@
+# Turtle Race 
+
+
+
 from random import randint
 from turtle import *
-
+hideturtle()
 speed(50)
 
 penup()
@@ -50,34 +54,25 @@ b.pendown()
 g.pendown()
 y.pendown()
 
-while (r.xcor()<160 and b.xcor()<160 and g.xcor()<160 and y.xcor()<160) :
+
+
+while True :
     r.forward(randint(1,6))
     b.forward(randint(1,6))
     g.forward(randint(1,6))
     y.forward(randint(1,6))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if r.xcor()>160 :
+        result="red"
+        break
+    elif b.xcor()>160 :
+        result="blue"
+        break
+    elif g.xcor()>160 :
+        result="green"
+        break
+    elif y.xcor()>160:
+        result="yellow"
+        break
 
 
 
@@ -85,26 +80,11 @@ while (r.xcor()<160 and b.xcor()<160 and g.xcor()<160 and y.xcor()<160) :
 
 
 
+setpos(-100,-200)
+color(result)
+
+write("The Winner is : "+result,move=True,font=("Arial",18,"normal"))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#The End
